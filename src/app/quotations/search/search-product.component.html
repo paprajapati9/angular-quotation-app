@@ -1,0 +1,18 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search for product</mat-label>
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" multiple>
+      <mat-option (onSelectionChange)="getValues($event)" *ngFor="let option of filteredOptions | async" [value]="option">
+        <div class="product-item">
+          <img [src]="option.img">
+          <div class="content">
+            <div class="product-name">{{ option.name }}</div>
+            <div class="price">BMC-{{ option.bmc }}</div>
+            <div class="bmc">Rs. {{ option.price }}</div>
+          </div>
+        </div>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

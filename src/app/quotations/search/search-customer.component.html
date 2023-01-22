@@ -1,0 +1,18 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search customer</mat-label>
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" multiple>
+      <mat-option (onSelectionChange)="getValues($event)" *ngFor="let customer of filteredCustomers | async" [value]="customer">
+        <div class="customer-item">
+          <img [src]="customer.avatar">
+          <div class="content">
+            <div>{{ customer.name }}</div>
+            <div>{{ customer.address }}</div>
+            <div>{{ customer.mobile }}</div>
+          </div>
+        </div>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

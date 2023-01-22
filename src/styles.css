@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #f2efef;
+}
+
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+    border: solid 1px #287ad7;
+    border-bottom: unset;
+}
+
+.mat-mdc-option .mdc-list-item__primary-text {
+    width: 100%;
+}
+
+.modal-content {
+    margin-top: 100px;
+}
+
+.modal-header {
+    border-bottom: unset;
+}
+
+.modal-footer {
+    border-top: unset;
+}

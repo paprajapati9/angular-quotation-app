@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-project';
+  activeTab = 'create-quotation';
+
+  changeActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
 }

@@ -1,0 +1,27 @@
+.mat-mdc-form-field {
+    width: 100%;
+}
+
+.product-item {
+    padding: 10px;
+    border-bottom: solid 1px #ccc;
+    cursor: pointer;
+    display: flex;
+}
+
+.product-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.product-item .content {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.product-item .content .price,
+.product-item .content .bmc {
+    font-size: 12px;
+}

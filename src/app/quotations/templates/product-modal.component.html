@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h4 class="modal-title">Product details</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <p>Name: {{ name }}</p>
+    <p>Description: Some description about the product</p>
+    <p>Specification: Some specifications of the product</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

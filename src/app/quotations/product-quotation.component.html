@@ -1,0 +1,53 @@
+<div class="quotation-container">
+  <h1>Create Quotation</h1>
+  <div class="inner-blocks-container">
+    <div class="item-block product-block">
+      <search-product (selectProduct)="selectNewProduct($event)"></search-product>
+      <div class="added-products-container">
+        <ng-container *ngFor="let product of addedProducts">
+          <div class="item product-item">
+            <div class="item-content">
+              <div class="item-image" (click)="openProductModal(product)">
+                <img [src]="product.img">
+              </div>
+              <div class="item-description" (click)="openProductModal(product)">
+                <div class="item-name">{{ product.name }}</div>
+                <div class="item-bmc">BMC-{{ product.bmc }}</div>
+                <div class="item-price">Rs. {{ product.price }}</div>
+              </div>
+            </div>
+            <div class="item-action">
+              <div class="quantity-input">
+                <div class="quantity-input-part quantity-input-button" (click)="increaseQuantity(product)">+</div>
+                <div class="quantity-input-part">{{ product.quantity }}</div>
+                <div class="quantity-input-part quantity-input-button" (click)="decreaseQuantity(product)">-</div>
+              </div>
+              <div class="price">
+                <input type="number"
+                       class="price-input"
+                       [(ngModel)]="product.sellingPrice"
+                       placeholder="Enter">
+              </div>
+              <div (click)="removeProduct(product)">
+                <mat-icon class="delete-icon">delete</mat-icon>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="item-block customer-block">
+      <search-customer (selectCustomer)="updateSelectedCustomer($event)"></search-customer>
+      <div class="customer-item" *ngIf="selectedCustomer">
+        <div class="item-image">
+          <img [src]="selectedCustomer.avatar">
+        </div>
+        <div class="item-content">
+          <div class="item-name">{{ selectedCustomer.name }}</div>
+          <div class="item-price">{{ selectedCustomer.address }}</div>
+          <div class="item-price">{{ selectedCustomer.mobile }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
