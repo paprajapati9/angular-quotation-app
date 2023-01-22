@@ -43,3 +43,7 @@
 .pp-main-block .pp-block-right-container {
     width: calc(100% - 100px);
 }
+
+.home-tab-view {
+    padding: 40px;
+}
